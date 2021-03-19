@@ -22,9 +22,9 @@
       "guest_os_type": "Windows2019_64",
       "clone_template": "Windows Server 2019 (64-bit)",
       "headless": "{{user `headless`}}",
-      "iso_checksum": "a4b524207cf532e48c9a57ad2ef1a9f4",
+      "iso_checksum": "7F510B7FFDA4CA31C2BC1AA6F5ADDFE8",
       "iso_checksum_type": "none",
-      "iso_url": "file://c:/iso/Server2019.iso",
+      "iso_url": "file://c:/iso/Server2019Updated.iso",
       "vm_memory": 4096,
       "shutdown_command": "a:/sysprep.bat",
       "type": "xenserver-iso",
@@ -71,8 +71,8 @@
     "disk_size": "61440",
     "disk_type_id": "1",
     "headless": "false",
-     "iso_checksum": "a4b524207cf532e48c9a57ad2ef1a9f4",
-     "iso_url": "file://c:/iso/Server2019.iso",
+     "iso_checksum": "7F510B7FFDA4CA31C2BC1AA6F5ADDFE8",
+     "iso_url": "file://c:/iso/Server2019Updated.iso", 
     "restart_timeout": "20m",
     "winrm_timeout": "1h"
   }

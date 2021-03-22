@@ -1,3 +1,4 @@
 *.log
 packer.exe
 packer-plugin-xenserver.exe
+packer_cache/*

@@ -16,13 +16,14 @@
         "./scripts/win-updates.ps1",
         "./scripts/unattend.xml",
         "./scripts/cd.ps1",
+        "./scripts/disable-ipv6.ps1",
         "./scripts/sysprep.bat"
       ],
       "guest_additions_mode": "upload",
       "guest_os_type": "Windows2019_64",
       "clone_template": "Windows Server 2019 (64-bit)",
       "headless": "{{user `headless`}}",
-      "iso_checksum": "7F510B7FFDA4CA31C2BC1AA6F5ADDFE8",
+      "iso_checksum": "0FB19F29253F46E9795086092CE71772",
       "iso_checksum_type": "none",
       "iso_url": "file://c:/iso/Server2019Updated.iso",
       "vm_memory": 4096,
@@ -30,8 +31,8 @@
       "type": "xenserver-iso",
       "ssh_username": "it",
       "vm_name": "WindowsServer2019",
-      "winrm_username": "vagrant",
-      "winrm_password": "vagrant",
+      "winrm_username": "it",
+      "winrm_password": "Pchp1admin",
       "winrm_use_ssl": false,
       "winrm_insecure": true,
       "winrm_timeout": "{{user `winrm_timeout`}}",
@@ -53,13 +54,7 @@
     }
   ],
   "provisioners": [
-    {
-      "execute_command": "{{ .Vars }} cmd /c \"{{ .Path }}\"",
-      "scripts": [
-        "./scripts/enable-rdp.bat"
-      ],
-      "type": "windows-shell"
-    },
+
     {
       "restart_timeout": "{{user `restart_timeout`}}",
       "type": "windows-restart"
@@ -71,9 +66,9 @@
     "disk_size": "61440",
     "disk_type_id": "1",
     "headless": "false",
-     "iso_checksum": "7F510B7FFDA4CA31C2BC1AA6F5ADDFE8",
+     "iso_checksum": "0FB19F29253F46E9795086092CE71772",
      "iso_url": "file://c:/iso/Server2019Updated.iso", 
-    "restart_timeout": "20m",
+    "restart_timeout": "40m",
     "winrm_timeout": "1h"
   }
 }

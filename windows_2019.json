@@ -4,6 +4,7 @@
       "boot_wait": "2m",
       "communicator": "winrm",
       "vcpus_max": 2,
+      "vcpus_atstartup": 2,
       "disk_size": "{{user `disk_size`}}",
       "floppy_files": [
         "{{user `autounattend`}}",
@@ -17,6 +18,7 @@
         "./scripts/unattend.xml",
         "./scripts/cd.ps1",
         "./scripts/disable-ipv6.ps1",
+        "./scripts/shutdown.bat",
         "./scripts/sysprep.bat"
       ],
       "guest_additions_mode": "upload",
@@ -69,7 +71,7 @@
      "iso_checksum": "0FB19F29253F46E9795086092CE71772",
      "iso_url": "file://c:/iso/Server2019Updated.iso", 
     "restart_timeout": "40m",
-    "winrm_timeout": "1h"
+    "winrm_timeout": "30m"
   }
 }
 

@@ -12,7 +12,7 @@
         "./scripts/xentools.bat",
         "./scripts/disable-network-discovery.cmd",
         "./scripts/disable-winrm.ps1",
-        "./scripts/enable-winrm.ps1",
+        "./scripts/winrmforansible.ps1",
         "./scripts/microsoft-updates.bat",
         "./scripts/win-updates.ps1",
         "./scripts/unattend.xml",
@@ -25,7 +25,7 @@
       "guest_os_type": "Windows2019_64",
       "clone_template": "Windows Server 2019 (64-bit)",
       "headless": "{{user `headless`}}",
-      "iso_checksum": "0FB19F29253F46E9795086092CE71772",
+      "iso_checksum": "A06F1FC6B25AF4EE98EED8F7EBDD0C89",
       "iso_checksum_type": "none",
       "iso_url": "file://c:/iso/Server2019Updated.iso",
       "vm_memory": 4096,
@@ -33,8 +33,8 @@
       "type": "xenserver-iso",
       "ssh_username": "it",
       "vm_name": "WindowsServer2019",
-      "winrm_username": "it",
-      "winrm_password": "Pchp1admin",
+      "winrm_username": "ansible",
+      "winrm_password": "Pchp1Pass",
       "winrm_use_ssl": false,
       "winrm_insecure": true,
       "winrm_timeout": "{{user `winrm_timeout`}}",
@@ -43,16 +43,8 @@
       "remote_password": "pchp1admin",
       "sr_name": "Local storage",
       "network_name": "Network 0",
-      "sr_iso_name": "DC4-ISO",
+      "sr_iso_name": "DC5-ISO",
       "keep_vm": "always"
-    }
-  ],
-  "post-processors": [
-    {
-      "keep_input_artifact": true,
-      "output": "windows_2019_{{.Provider}}.box",
-      "type": "vagrant",
-      "vagrantfile_template": "vagrantfile-windows_2019.template.erb"
     }
   ],
   "provisioners": [

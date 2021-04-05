@@ -106,11 +106,6 @@
                     <Path>cmd.exe /c powershell -Command &quot;Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force&quot;</Path>
                 </RunSynchronousCommand>
                 <RunSynchronousCommand wcm:action="add">
-                    <Order>3</Order>
-                    <Description>Disable WinRM</Description>
-                    <Path>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\disable-winrm.ps1</Path>
-                </RunSynchronousCommand>
-                <RunSynchronousCommand wcm:action="add">
                     <Order>4</Order>
                     <Path>cmd.exe /c a:\disable-network-discovery.cmd</Path>
                 </RunSynchronousCommand>
@@ -121,7 +116,7 @@
         <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <AutoLogon>
                 <Password>
-                    <Value>pchpit</Value>
+                    <Value>it</Value>
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
@@ -152,8 +147,8 @@
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>				
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\enable-winrm.ps1</CommandLine>
-                    <Description>Disable WinRM</Description>
+                    <CommandLine>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\winrmforansible.ps1</CommandLine>
+                    <Description>Enable WinRM</Description>
                     <Order>5</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
@@ -198,7 +193,7 @@
                 </SynchronousCommand>
                 -->
                 <!-- END WITHOUT WINDOWS UPDATES -->
-                <!-- WITH WINDOWS UPDATES -->
+                <!-- WITH WINDOWS UPDATES 
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:\microsoft-updates.bat</CommandLine>
                     <Order>98</Order>
@@ -210,6 +205,7 @@
                     <Order>100</Order>
                     <RequiresUserInput>true</RequiresUserInput>
                 </SynchronousCommand>
+				-->
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\run-diskcleanup.ps1</CommandLine>
                     <Description>Cleanup disk</Description>
@@ -233,7 +229,7 @@
             </OOBE>
             <UserAccounts>
                 <AdministratorPassword>
-                    <Value>it</Value>
+                    <Value>Pchp1admin</Value>
                     <PlainText>true</PlainText>
                 </AdministratorPassword>
                 <LocalAccounts>
